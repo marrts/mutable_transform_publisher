@@ -31,9 +31,9 @@ def generate_test_description():
     shutil.copy(os.path.join(get_package_share_directory('mutable_transform_publisher'), 'test', 'config', 'one_tform.yaml'), yaml_path)
 
     mutable_tf_pub = launch_ros.actions.Node(
-         node_name='mutable_tf_pub',
+         name='mutable_tf_pub',
          package='mutable_transform_publisher',
-         node_executable='mutable_transform_pub',
+         executable='mutable_transform_pub',
          additional_env={'PYTHONUNBUFFERED': '1'},
          parameters=[{'yaml_path': yaml_path}]
     )
